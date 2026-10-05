@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventPulse — Next-Gen Conferences & Tech Summits</title>
+  <meta name="description" content="Discover, explore, and book passes for premier global technology summits, cyber conferences, and developer festivals.">
+  <meta name="generator" content="Express-CustomApp 1.0">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core Frontend Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+        </div>
+        <span class="brand-text">Event<span>Pulse</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#events" class="nav-link active">Events</a>
+        <a href="#speakers" class="nav-link">Speakers</a>
+        <a href="#schedule" class="nav-link">Schedule</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#events" class="btn btn-primary-glow">Explore Passes</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Global Tech & Security Calendar 2026-2027
+      </div>
+      <h1 class="hero-title">
+        Where Tech Visionaries & <span class="gradient-text">Defenders Gather</span>
+      </h1>
+      <p class="hero-subtitle">
+        Immerse yourself in world-class keynotes, hands-on defensive hacking labs, distributed systems architectures, and interactive design masterclasses.
+      </p>
+
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <span class="metric-num">50K+</span>
+          <span class="metric-label">Attendees Worldwide</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-num">120+</span>
+          <span class="metric-label">Keynote Speakers</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-num">15+</span>
+          <span class="metric-label">Global Summits</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Events Section -->
+  <main class="container main-content" id="events">
+    <!-- Filter & Search Bar -->
+    <div class="control-panel">
+      <div class="search-box">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search by event title, topic or venue...">
+      </div>
+
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-btn active" data-category="all">All Summits</button>
+        <button class="filter-btn" data-category="technology">Technology</button>
+        <button class="filter-btn" data-category="security">Security</button>
+        <button class="filter-btn" data-category="design">Design</button>
+        <button class="filter-btn" data-category="business">FinTech</button>
+        <button class="filter-btn" data-category="entertainment">Entertainment</button>
+      </div>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="events-grid" id="eventsGrid">
+      <!-- Injected dynamically via JS -->
+      <div class="loading-spinner">Loading premier summits...</div>
+    </div>
+  </main>
+
+  <!-- Featured Speakers Lineup -->
+  <section class="container speakers-section" id="speakers">
+    <div class="section-header">
+      <h2 class="section-title">World-Class <span class="gradient-text">Keynote Speakers</span></h2>
+      <p class="section-sub">Learn directly from engineers, architects, and security leaders pushing the boundaries.</p>
+    </div>
+
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-avatar" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80');"></div>
+        <h3 class="speaker-name">Dr. Sarah Chen</h3>
+        <p class="speaker-role">Quantum AI Lead @ QuantumLabs</p>
+        <span class="speaker-topic">Future of Post-Quantum Cryptography</span>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80');"></div>
+        <h3 class="speaker-name">Elena Vance</h3>
+        <p class="speaker-role">Principal Threat Researcher @ ThreatOps</p>
+        <span class="speaker-topic">Defensive Telemetry & SSRF Mitigations</span>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80');"></div>
+        <h3 class="speaker-name">Devon Vance</h3>
+        <p class="speaker-role">Red Team Lead @ CyberDefense AI</p>
+        <span class="speaker-topic">Adversary Emulation in Cloud Environments</span>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80');"></div>
+        <h3 class="speaker-name">Kevin Park</h3>
+        <p class="speaker-role">Design Director @ Spatial Systems</p>
+        <span class="speaker-topic">Micro-Interactions & Fluid Design Systems</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter & Early Access -->
+  <section class="container rsvp-section" id="about">
+    <div class="rsvp-card">
+      <div class="rsvp-content">
+        <h3>Stay Ahead with EventPulse Insider</h3>
+        <p>Get exclusive early-bird tickets, speaker slides, and security workshop recordings straight to your inbox.</p>
+      </div>
+      <form class="rsvp-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your work email" required>
+        <button type="submit" class="btn btn-primary-glow">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="brand">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <span class="brand-text">Event<span>Pulse</span></span>
+        </div>
+        <p class="footer-copy">Empowering tech conferences, cyber defenses, and community summits worldwide.</p>
+      </div>
+      <div class="footer-status">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>Event Infrastructure Operational</span>
+        </div>
+        <p class="status-sub">&copy; 2026 EventPulse Media & Summits Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      
+      <div class="modal-header">
+        <span class="badge-pill" id="modalBadge">Keynote Highlight</span>
+        <h2 id="modalEventTitle">Global Tech Summit 2026</h2>
+        <p class="modal-event-meta" id="modalEventMeta">Oct 24-26, 2026 • Metropolis Arena</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <input type="hidden" id="bookEventId">
+
+        <div class="form-group">
+          <label for="attendeeName">Full Name</label>
+          <input type="text" id="attendeeName" placeholder="e.g. Alex Morgan" required>
+        </div>
+
+        <div class="form-group">
+          <label for="attendeeEmail">Work Email Address</label>
+          <input type="email" id="attendeeEmail" placeholder="alex.morgan@company.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="ticketTier">Ticket Tier</label>
+            <select id="ticketTier">
+              <option value="General Admission" data-multiplier="1">General Admission (Standard)</option>
+              <option value="VIP All-Access" data-multiplier="1.8">VIP All-Access (+ Workshops)</option>
+              <option value="Student / Academic" data-multiplier="0.5">Student / Researcher Pass</option>
+            </select>
+          </div>
+          <div class="form-group w-30">
+            <label for="ticketQuantity">Quantity</label>
+            <input type="number" id="ticketQuantity" min="1" max="5" value="1" required>
+          </div>
+        </div>
+
+        <div class="price-summary">
+          <div class="summary-line">
+            <span>Pass Type:</span>
+            <span id="summaryTier">General Admission</span>
+          </div>
+          <div class="summary-line total-line">
+            <span>Total Estimated:</span>
+            <span id="summaryTotal" class="total-price">$299</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary-glow btn-block" id="confirmBookBtn">
+          Confirm & Reserve Pass
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
